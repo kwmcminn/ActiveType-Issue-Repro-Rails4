@@ -1,5 +1,3 @@
-require 'pry'
-
 class CatCreator < ActiveType::Object
   before_save :perform
 
@@ -14,6 +12,7 @@ class CatCreator < ActiveType::Object
   end
 
   def create_kittens
+    # did not include a name (which is validated), to make the Kitten creation fail
     Kitten.create(age:7, color:"Black", dog_id: Cat.last)
   end
 end
